@@ -2,7 +2,6 @@ import euclidean as eu
 import correlation as col
 import numpy as np
 
-# membaca file txt
 file = open( "data.txt" )
 
 x = []
@@ -69,19 +68,22 @@ else:
     # continue with what you were doing
     # print('Matrix inverse : \n', inverse)
     print()
+while(True):
+    arr = 0
+    euclid = 0
+    print()
+    print('Data 1 :')
+    p = float(input('\tFeature no 1 : '))
+    q = float(input('\tFeature no 2 : '))
+    print('Data 2 : ')
+    p1 = float(input('\tFeature no 1 : '))
+    q1 = float(input('\tFeature no 2 : '))
 
-print('Data 1 :')
-p = float(input('\tFeature no 1 : '))
-q = float(input('\tFeature no 2 : '))
-print('Data 2 : ')
-p1 = float(input('\tFeature no 1 : '))
-q1 = float(input('\tFeature no 2 : '))
+    pq = np.array([p, q])
+    pq1 = np.array([p1, q1])
 
-pq = np.array([p, q])
-pq1 = np.array([p1, q1])
+    arr = np.subtract(pq, pq1)
+    euclid = eu.calc_euclid(pq, pq1)
 
-arr = np.subtract(pq, pq1)
-euclid = eu.calc_euclid(pq, pq1)
-
-print('Euclidean distance   :\n', euclid)
-print('Mahalanobis distance :\n', np.matmul(np.matmul(arr.transpose(), inv), arr))
+    print('Euclidean distance   :\n', euclid)
+    print('Mahalanobis distance :\n', np.matmul(np.matmul(arr.transpose(), inv), arr))
