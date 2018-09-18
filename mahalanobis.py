@@ -3,7 +3,7 @@ import correlation as col
 import numpy as np
 
 # membaca file txt
-file = open( "exp-01.txt" )
+file = open( "data.txt" )
 
 x = []
 for line in file.readlines():
