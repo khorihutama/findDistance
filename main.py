@@ -2,7 +2,7 @@ import euclidean as eu
 import correlation as col
 import numpy as np
 
-file = open( "data.txt" )
+file = open( "TEST.txt" )
 
 x = []
 for line in file.readlines():
@@ -45,10 +45,10 @@ for i in range(len(mtx)):
     a += covariance(float(x[i][0]), float(x[i][0]), xAvg, xAvg)
     b += covariance(float(x[i][0]), float(x[i][1]), xAvg, yAvg)
     c += covariance(float(x[i][1]), float(x[i][1]), yAvg, yAvg)
-
-a = (a/len(mtx))
+# menggunakan sampel (n-1)
+a = (a/(len(mtx)-1))
 b = (b/(len(mtx)-1))
-c = (c/len(mtx))
+c = (c/(len(mtx)-1))
 
 cov = np.array([[a, b], [b, c]])
 

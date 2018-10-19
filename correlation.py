@@ -9,9 +9,9 @@ def corr(cov, xbar, ybar, mtx):
 
     def sq(num):
         return math.pow(num, 2)
-
+    # menggunakan sampel (n-1)
     def st_dev(num):
-        return math.sqrt(num/len(mtx))
+        return math.sqrt(num/(len(mtx)-1))
 
     for i in range(len(mtx)):
         # stdX += math.pow(mtx[i][0]-xBar,2)
